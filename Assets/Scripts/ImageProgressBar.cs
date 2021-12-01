@@ -4,18 +4,19 @@ using UnityEngine.UI;
 
 /// <summary>
 /// 蛤璶北ImageGameObject┏
+/// 场Manager北ㄓ矪瞶UI场
 /// </summary>
 [RequireComponent(typeof(Image))]
 public class ImageProgressBar : MonoBehaviour
 {
     [Header("Radial Timers")]
     [SerializeField] private float indicatorTimer = 0f;
-    [SerializeField] private float maxIndicatorTimer = 1.0f;
+    [SerializeField] private float maxIndicatorTimer = 0.8f;
     [Header("UI Indicator")]
     [SerializeField] private Image ImageUI = null;
 
     public UnityAction<ImageProgressBar> onProgressComplete = null;
-    public UnityAction<ImageProgressBar> onProgressToStart = null;
+    public UnityAction<ImageProgressBar> onProgressToZero = null;
 
     /// <summary>
     /// 砞竚Timer程计
@@ -53,7 +54,7 @@ public class ImageProgressBar : MonoBehaviour
         if (indicatorTimer <= 0)
         {
             indicatorTimer = 0;
-            onProgressToStart?.Invoke(this);
+            onProgressToZero?.Invoke(this);
         }
         ImageUI.fillAmount = indicatorTimer/maxIndicatorTimer;
     }
