@@ -35,28 +35,45 @@ public class ImageProgressBar : MonoBehaviour
     /// <summary>
     /// 增加進度
     /// </summary>
-    public void ProgressIncrease()
+    /// <param name="isClickEvent">是否受Click控制</param>
+    public void ProgressIncrease(bool isClickEvent = false)
     {
-        indicatorTimer += Time.deltaTime;
-        if (indicatorTimer >= maxIndicatorTimer)
+        if (isClickEvent)
         {
-            indicatorTimer = maxIndicatorTimer;
             onProgressComplete?.Invoke(this);
+            ImageUI.fillAmount = 1;
         }
-        ImageUI.fillAmount = indicatorTimer / maxIndicatorTimer;
+        else
+        {
+            indicatorTimer += Time.deltaTime;
+            if (indicatorTimer >= maxIndicatorTimer)
+            {
+                indicatorTimer = maxIndicatorTimer;
+                onProgressComplete?.Invoke(this);
+            }
+            ImageUI.fillAmount = indicatorTimer / maxIndicatorTimer;
+        }
     }
     /// <summary>
     /// 減少進度
     /// </summary>
-    public void ProgressDecrease()
+    public void ProgressDecrease(bool isClickEvent = false)
     {
-        indicatorTimer -= Time.deltaTime;
-        if (indicatorTimer <= 0)
+        if (isClickEvent)
         {
-            indicatorTimer = 0;
             onProgressToZero?.Invoke(this);
+            ImageUI.fillAmount = 0;
         }
-        ImageUI.fillAmount = indicatorTimer/maxIndicatorTimer;
+        else
+        {
+            indicatorTimer -= Time.deltaTime;
+            if (indicatorTimer <= 0)
+            {
+                indicatorTimer = 0;
+                onProgressToZero?.Invoke(this);
+            }
+            ImageUI.fillAmount = indicatorTimer/maxIndicatorTimer;
+        }
     }
 
     /// <summary>

@@ -1589,7 +1589,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1513356204}
           m_TargetAssemblyTypeName: ProgressBarEventTrigger, Assembly-CSharp
-          m_MethodName: set_IsActivated
+          m_MethodName: set_IsPressDown
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1605,7 +1605,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1513356204}
           m_TargetAssemblyTypeName: ProgressBarEventTrigger, Assembly-CSharp
-          m_MethodName: set_IsActivated
+          m_MethodName: set_IsPressDown
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2108083452}
           m_TargetAssemblyTypeName: ProgressBarEventTrigger, Assembly-CSharp
-          m_MethodName: set_IsActivated
+          m_MethodName: set_IsPressDown
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2168,7 +2168,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2108083452}
           m_TargetAssemblyTypeName: ProgressBarEventTrigger, Assembly-CSharp
-          m_MethodName: set_IsActivated
+          m_MethodName: set_IsPressDown
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
