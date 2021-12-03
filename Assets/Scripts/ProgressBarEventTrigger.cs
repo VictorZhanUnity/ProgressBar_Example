@@ -14,6 +14,11 @@ public class ProgressBarEventTrigger : MonoBehaviour
     [SerializeField] private EventTrigger eventTrigger;
     [SerializeField] private bool IsAutoReverse = false;
 
+    public ImageProgressBar ImageProgressBar
+    {
+        get { return imageProgressBar; }
+    }
+
     private bool keepUpdate = false;
     /// <summary>
     /// ¬O§_¨üScript±±¨î
@@ -94,5 +99,10 @@ public class ProgressBarEventTrigger : MonoBehaviour
     public string CurrentProgress
     {
         get { return imageProgressBar.CurrentProgress; }
+    }
+
+    public float MaxIndicatorTimer
+    {
+        set { imageProgressBar.MaxIndicatorTimer = value; }
     }
 }
